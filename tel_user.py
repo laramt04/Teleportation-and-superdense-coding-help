@@ -5,7 +5,7 @@ def format_coeff(c):
     except ValueError:
         return str(c)
 
-    # Always show + or - explicitly
+    # make -- into + etc
     if c_val.imag != 0:
         if c_val.imag >= 0:
             return f"+{c_val.imag}i"
@@ -17,15 +17,15 @@ def format_coeff(c):
 def teleportation_decomposition(alpha, beta):
     α, β = alpha, beta
 
-    print("\n🔹 Quantum Teleportation Analytic Decomposition 🔹")
-    print(f"|ψ⟩ₐ = {format_coeff(α)}|0⟩ {format_coeff(β)}|1⟩")
+    print("\n Quantum Teleportation")
+    print(f"|psi⟩ₐ = {format_coeff(α)}|0⟩ {format_coeff(β)}|1⟩")
 
     print("\nThe total state expands as:")
     print("1/(2√2) [")
-    print(f"  |Φ_I⟩ ⊗ ({format_coeff(α)}|0⟩ {format_coeff(β)}|1⟩)")
-    print(f"+ |Φ_Z⟩ ⊗ ({format_coeff(α)}|0⟩ {format_coeff(β)}|1⟩)")
-    print(f"+ |Φ_X⟩ ⊗ ({format_coeff(β)}|0⟩ {format_coeff(α)}|1⟩)")
-    print(f"+ |Φ_Y⟩ ⊗ ({format_coeff(β)}|0⟩ {format_coeff(α)}|1⟩)")
+    print(f"  |phi_I⟩ ⊗ ({format_coeff(α)}|0⟩ {format_coeff(β)}|1⟩)")
+    print(f"+ |phi_Z⟩ ⊗ ({format_coeff(α)}|0⟩ {format_coeff(β)}|1⟩)")
+    print(f"+ |phi_X⟩ ⊗ ({format_coeff(β)}|0⟩ {format_coeff(α)}|1⟩)")
+    print(f"+ |phi_Y⟩ ⊗ ({format_coeff(β)}|0⟩ {format_coeff(α)}|1⟩)")
     print("]\n")
 
     print("Measurement results and required operations:")
@@ -36,7 +36,7 @@ def teleportation_decomposition(alpha, beta):
 
 
 if __name__ == "__main__":
-    print("\n🧠 Teleportation Formula Generator (Clean Signs)")
+    print("\n Teleportation Formula Generator (Clean Signs)")
     alpha = input("Enter α (e.g., 1, -1, i, -i): ")
     beta = input("Enter β (e.g., 1, -1, i, -i): ")
     teleportation_decomposition(alpha, beta)
